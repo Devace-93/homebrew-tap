@@ -3,16 +3,16 @@
 class Mousetouch < Formula
   desc "Apple Magic Mouse multitouch gestures for Linux/Wayland"
   homepage "https://github.com/Devace-93/mousetouch"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_intel do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.1/mousetouch-v0.1.1-x86_64-linux.tar.gz"
-    sha256 "8e17dd946ee4deae4971bb7b2898ed4a06c9289b8317e3bd890800c2ab6bbf42"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.2/mousetouch-v0.1.2-x86_64-linux.tar.gz"
+    sha256 "9f2811286ad94833b4291c118546d99213a82045f69c87f893eb1e5dbc09a89c"
   end
   on_arm do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.1/mousetouch-v0.1.1-aarch64-linux.tar.gz"
-    sha256 "0715479be370f353294a515acec31cdf1481d018ef1205efa79fdb8e6b54f6a7"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.2/mousetouch-v0.1.2-aarch64-linux.tar.gz"
+    sha256 "3207bf65ad59c0fb4c20906f2d64c2c96048d203bba96436d93da6cbaa127fca"
   end
 
   depends_on :linux
@@ -42,11 +42,10 @@ class Mousetouch < Formula
       Then start it in the background:
         brew services start mousetouch
       The settings app needs python3-gi, python3-gi-cairo, GTK 4 and libadwaita from
-      your distribution. Desktops do not look in Homebrew's share/applications or
-      share/icons, so add a user entry once to get it in the app menu (absolute
-      paths, since the launcher has neither Homebrew's bin nor its icons on its path):
-        mkdir -p ~/.local/share/applications
-        sed -e "s|^Exec=.*|Exec=#{opt_bin}/mousetouch-settings|" -e "s|^Icon=.*|Icon=#{opt_share}/icons/hicolor/scalable/apps/io.github.Devace_93.MouseTouch.svg|" #{opt_share}/applications/io.github.Devace_93.MouseTouch.desktop > ~/.local/share/applications/io.github.Devace_93.MouseTouch.desktop
+      your distribution. Desktops do not look in Homebrew's share directory, so the
+      daemon adds the app-menu entry itself the first time the service starts
+      (~/.local/share/applications/io.github.Devace_93.MouseTouch.desktop; delete it
+      after `brew uninstall`).
     EOS
   end
 
