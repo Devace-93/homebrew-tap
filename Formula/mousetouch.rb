@@ -3,16 +3,16 @@
 class Mousetouch < Formula
   desc "Apple Magic Mouse multitouch gestures for Linux/Wayland"
   homepage "https://github.com/Devace-93/mousetouch"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_intel do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.3/mousetouch-v0.1.3-x86_64-linux.tar.gz"
-    sha256 "878e9b6ad371becd5298e03db39e028168f11bce1da8cfd9cfb40c374be6c637"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.4/mousetouch-v0.1.4-x86_64-linux.tar.gz"
+    sha256 "ed775a8dde41a43ecd7b5bc28dd214c4e5f1a3fbf448e677b6e4da4eca90fa47"
   end
   on_arm do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.3/mousetouch-v0.1.3-aarch64-linux.tar.gz"
-    sha256 "1d3205d4a7afd55bb041a77468ceaebae95e80cb23e7cb63a1c3a3a0ec8bc0ad"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.4/mousetouch-v0.1.4-aarch64-linux.tar.gz"
+    sha256 "a065cc214e2af1aad4ee3bcfe9e64fca1a0d0c70291e92bcde637e9c9238a195"
   end
 
   depends_on :linux
