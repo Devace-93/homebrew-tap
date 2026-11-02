@@ -3,16 +3,16 @@
 class Mousetouch < Formula
   desc "Apple Magic Mouse multitouch gestures for Linux/Wayland"
   homepage "https://github.com/Devace-93/mousetouch"
-  version "0.1.9"
+  version "0.1.10"
   license "MIT"
 
   on_intel do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.9/mousetouch-v0.1.9-x86_64-linux.tar.gz"
-    sha256 "45b39502eb67995449c1c3b058463a4b28e7afdbba779f9281eec97655a512fd"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.10/mousetouch-v0.1.10-x86_64-linux.tar.gz"
+    sha256 "a063af499e1f0cad32f2be857dade7f1efea7b6ecf6a4788446cdcb2ab781ec8"
   end
   on_arm do
-    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.9/mousetouch-v0.1.9-aarch64-linux.tar.gz"
-    sha256 "77bb92e98f28fa96e85cb8ffca3ce037881680fe55aa54a3ef20dc7c07e2334b"
+    url "https://github.com/Devace-93/mousetouch/releases/download/v0.1.10/mousetouch-v0.1.10-aarch64-linux.tar.gz"
+    sha256 "0dcb283f559e752b8512a65ac30e252e60061678843696158d10c03e63d3c017"
   end
 
   depends_on :linux
@@ -41,6 +41,8 @@ class Mousetouch < Formula
         sudo modprobe uinput && sudo udevadm control --reload-rules && sudo udevadm trigger
       Then start it in the background:
         brew services start mousetouch
+      After `brew upgrade` the running daemon restarts itself (0.1.10 and later;
+      older versions need `brew services restart mousetouch`).
       The settings app needs python3-gi, python3-gi-cairo, GTK 4 and libadwaita from
       your distribution. Desktops do not look in Homebrew's share directory, so the
       daemon adds the app-menu entry itself the first time the service starts
